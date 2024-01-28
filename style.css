@@ -1,0 +1,104 @@
+body{
+     
+     background-color: #000 !important;
+}
+
+
+.side{
+     background-color: #000 !important;
+     z-index: 99;
+     color: #fff !important;
+}
+.side a {
+     color: #fff !important;
+}
+.sbtn{
+     width: 75px;
+     background-color: #fff ;
+}
+.sbtn i{
+     color: #000 !important;
+}
+.d{
+     display:none;
+     width: 0;
+}
+a{
+     cursor: pointer;
+}
+.meals{
+     margin-left: 10%;
+     width: 80%;
+}
+.name{
+     position: absolute;
+     top: 150%;
+     bottom: 0;
+     right: 0;
+     left: 0;
+     display: flex;
+     flex-direction:column ;
+     justify-content: center;
+     background-color: rgba(255, 255, 255, 0.7);
+     transition: all 1s;
+}
+.base{
+     overflow: hidden;
+}
+.base:hover .name{
+     top: 0;
+}
+#load{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     position: absolute;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     background-color: #000;
+     z-index: 100;
+}
+#item{
+     position: absolute;
+     top:0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     display: none;
+}
+.col-md-3:hover{
+     cursor: pointer;
+}
+#cbtn{
+     position: absolute;
+     top: 15;
+     right: 15;
+}
+.serch{
+     display: none;
+}
+
+.invalid-feedback{
+     background-color: rgb(231, 153, 153) !important;
+     color:#fff !important;
+     margin: 3 !important;
+     /* display: block; */
+}
+.notv{
+     opacity: 0.6;
+     cursor: alias ;
+}
+.my-bac{
+     display: none;
+}
+.mybbbtnn{
+     width: fit-content;
+}
+.mycon{
+     margin-top: 15%;
+}
+.ff{
+     display: none;
+}

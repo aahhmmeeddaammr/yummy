@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="style.css">
+     <title>Yamyeeee</title>
+</head>
+<body>
+     <section class="d-flex">
+          <div class="side position-fixed  d-flex justify-content-between vh-100 ">
+               <div class="d" id="dd">
+                <div class="content d-flex  flex-column justify-content-between">
+                    <ul class="nav d-flex flex-column justify-content-around flex-wrap h-25 px-2 py-4 ">
+                         <li><a class="text-dark text-decoration-none "  id="search">Search</a></li>
+                         <li><a class="text-dark text-decoration-none " id="Categories">Categories</a></li>
+                         <li><a class="text-dark text-decoration-none "  id="Area">Area</a></li>
+                         <li><a class="text-dark text-decoration-none " id="Ingredients">Ingredients</a></li>
+                         <li><a class="text-dark text-decoration-none " id="contact" >Contact Us</a></li>
+                    </ul>
+                    <div class="footer p-3">
+                         <ul class="nav"> 
+                              <li><a href="" class="text-dark text-decoration-none px-2"><i class="fa-brands fa-facebook"></i></a></li>
+                              <li><a href="" class="text-dark text-decoration-none px-2 "><i class="fa-brands fa-twitter"></i></a></li>
+                              <li><a href="" class="text-dark text-decoration-none px-2 "><i class="fa-solid fa-globe"></i></a></li>
+                         </ul>
+                         <p id="p">Copyright Â© 2019 All Rights Reserved.</p>
+                    </div>
+               </div>
+          </div>
+               <div class="sbtn  d-flex flex-column justify-content-center position-relative h-100 ">
+                    <img class="logo position-absolute top-0 w-100 p-3" src="imgs/logo.png" alt="" srcset="">
+                    <button class="btn"><i class=" fa-solid icon fa-2x fa-align-justify text-info"></i></button>
+                   
+               </div>
+          </div>
+          <div class="container meals  py-4" >
+               
+               <div class="serch  my-5" ></div>
+               <div class="row categ gy-3"  id="catg"></div>
+               <div style="font-size: 30px;" class="row area  gy-3 text-center text-light">
+                    
+               </div>
+               <div style="font-size: 30px;" class="row ingrad  gy-3 text-center text-light" >
+               
+               </div>
+               <!-- <div class="row categ gy-3"  id="catg"></div> -->
+               <div class="row meal g-3 my-4"  id="demo">
+               </div>
+               <div class="ff  justify-content-center align-items-center mycon ">
+                    <div class="container mycon d-flex  align-content-center w-50 m-auto text-center">
+                         <div class="row text-center d-flex justify-content-center align-items-center">
+                              <div class="col-md-6 my-3">
+                                   <input  onkeyup="checkname(this.value)" type="text" name="" id="username" class="form-control" placeholder="Enter Name...">
+                                   <div class="invalid-feedback my-3 p-1 rounded-2" >
+                                        <p style="font-size: 18px ;">Special characters and numbers not allowed</p>
+                                   </div>
+                              </div>
+                              <div class="col-md-6 my-3">
+                                   <input onkeyup="checkemail(this.value)" type="email" name="" id="useremail" placeholder="Enter Email..." class="form-control">
+                                   <div class="my-3 p-1 invalid-feedback rounded-2"  >
+                                        <p style="font-size: 18px ;">Email not valid *exemple@yyy.zzz</p>
+                                   </div>
+                              </div>
+                              <div class="col-md-6 my-3">
+                                   <input type="text" onkeyup="checknumber(this.value)" name="" id="userphone" placeholder="Enter Phone Number..." class="form-control">
+                                   <div class="my-bac my-3 p-1 invalid-feedback rounded-2" >
+                                        <p style="font-size: 20px ;">Enter valid Phone Number</p>
+                                   </div>
+                              </div>
+                              <div class="col-md-6 my-3">
+                                   <input type="number" onkeyup="checkage(this.value)" placeholder="Enter Age..." min="0" name="" id="userage" class="form-control">
+                                   <div class="my-bac my-3 p-1 invalid-feedback rounded-2" >
+                                        <p style="font-size: 20px ;">Enter valid age</p>
+                                   </div>
+                              </div>
+                              <div class="col-md-6 my-3">
+                                   <input type="text" name="" id="userpass" class="form-control" onkeyup="checkpass(this.value)">
+                                   <div class="my-bac my-3 p-1 invalid-feedback rounded-2" >
+                                        <p style="font-size: 20px ;">Enter valid password *Minimum eight characters, at least one letter and one number:*</p>
+                                   </div>
+                              </div>
+                              <div class="col-md-6 my-3">
+                                   <input type="text" name="" id="repass" class="form-control" onkeyup="checkrepass(this.value)">
+                                   <div class="my-bac my-3 p-1 invalid-feedback rounded-2" >
+                                      
+                                        <p style="font-size: 20px ;">Enter valid repassword</p>
+                     
+                                   </div>
+                              </div>
+                              <button class=" btn-danger my-3 mybbbtnn m-auto">Sumbet</button>
+                         </div>
+                        </div>
+               </div>
+          </div>
+     </section>
+         
+     <section id="item" class="text-light p-5"></section>
+
+
+     <section id="load">
+          <div class="clearfix">
+               <div class="spinner-border  text-danger  float-end" role="status">
+                 <span class="visually-hidden">Loading...</span>
+               </div>
+             </div>
+         
+     </section>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+     <script src="jquery-3.7.1.min.js"></script>
+     <script src="Api.js"></script>
+     <script src="main.js"></script>
+</body>
+</html>
