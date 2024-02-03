@@ -82,6 +82,7 @@ function c(){
     $('#item').css('display','none');
     $('.meal').css('display','flex');
     $('body').css('overflow','auto');
+       display_content(data);
 }
 
 async function searchByname(val){
