@@ -25,7 +25,7 @@ function display_content(dat){
 }
 
 
-$('.btn').on('click',function(){
+function slide_nav(){
     if($('.icon').hasClass('fa-align-justify')){
         $('.icon').removeClass('fa-align-justify').addClass('fa-xmark');
         
@@ -35,25 +35,32 @@ $('.btn').on('click',function(){
     }else{
         $('.icon').removeClass('fa-xmark').addClass('fa-align-justify');
         $('#dd').animate({width:0},500,function(){
-            $('#dd').css({'display':'none'})
-            
+            $('#dd').css({'display':'none'})   
         })
-        
     }
+}
+
+$('.btn').on('click',function(){
+   slide_nav();
 })
 
 $('#search').on('click',function(){
     let content=` 
-    <div class=" container d-flex justify-content-around ">
-    <div class="row">
-    <div class="col-md-6">
-    <input type="text" onkeyup="searchByname(this.value)" placeholder="Enter Name..." id="byname" class="form-control w-100">
-    </div>
-    <div class="col-md-6">
-    <input type="text" onkeyup="searchByFristchat(this.value)" maxlength="1" id="byfchar" placeholder="Enter frist character.." class="form-control w-100">
-    </div>
-    </div>
-    </div>
+    
+        <div class="row">
+            <div class="col-md-12">
+                <div class=" row d-flex justify-content-between">
+                     <div class="col-md-6 ">
+                         <input type="text" onkeyup="searchByname(this.value)" placeholder="Enter Name..." id="byname" class="form-control w-100">
+                    </div>
+                    <div class="col-md-6 ">
+                        <input type="text" onkeyup="searchByFristchat(this.value)" maxlength="1" id="byfchar" placeholder="Enter frist character.." class="form-control  w-100">
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
     `
     $('.serch').css('display','block').html(content);
     $('.categ').css('display','none');
@@ -61,6 +68,8 @@ $('#search').on('click',function(){
     $('.area').css('display','none');
     $('.ingrad').css('display','none');
     $('.ff').css('display','none');
+    $('#item').css('display','none');
+    slide_nav();
     $('.meal').html('');
 })
 
@@ -98,6 +107,7 @@ $('#Categories').on('click',function(){
     $('.area').css('display','none');
     $('.ingrad').css('display','none');
     $('.ff').css('display','none')
+    slide_nav();
     get_categores();
 })
 
@@ -175,6 +185,8 @@ function clicked(element){
     $('.area').css('display','none');
     $('.ingrad').css('display','none');
     $('.ff').css('display','none')
+   
+    
     get_meal_By_id(element.getAttribute('data-id'))
 }
 
@@ -251,6 +263,7 @@ $('#Area').on('click',function(){
     $('.meal').css('display','none');
     $('.area').css('display','flex');
     $('.ff').css('display','none')
+    slide_nav();
     get_area()
 })
 
@@ -313,6 +326,7 @@ $('#Ingredients').on('click',function(){
     $('.area').css('display','none');
     $('.ingrad').css('display','flex');
     $('.ff').css('display','none')
+    slide_nav();
     get_ingredients()
 })
 
@@ -380,6 +394,7 @@ $('#contact').on('click',function(){
     $('.area').css('display','none');
     $('.ingrad').css('display','none')
     $('.ff').css('display','flex');
+    slide_nav();
 })
 
 function checkname(val){
@@ -403,7 +418,6 @@ function checknumber(val){
     let regx=/0[0-9]{10}$/gm
     if(regx.test(val)){
     $('#userphone').removeClass('is-invalid')
-
     }else{
     $('#userphone').addClass('is-invalid')
     }
@@ -412,10 +426,10 @@ function checknumber(val){
 function checkage(val){
     let regex=/[1-9]{1,2}$/gm;
     if(regex.test(val)){
-    $('#userage').removeClass('is-invalid')
+        $('#userage').removeClass('is-invalid')
         
     }else{
-    $('#userage').addClass('is-invalid')
+        $('#userage').addClass('is-invalid')
     }
 }
 
@@ -432,6 +446,7 @@ function checkpass(val){
     let regex=/[A-Za-z0-9!@#$%^&*(*)_+]{8,}/gm;
     if(regex.test(val) && checkupper(val)){
         $('#userpass').removeClass('is-invalid')
+        return true;
     }else{
         $('#userpass').addClass('is-invalid')
     }
@@ -445,4 +460,6 @@ function checkrepass(val){
         $('#repass').addClass('is-invalid')
     }
 }
+
+
 main()
